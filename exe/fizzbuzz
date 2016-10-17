@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "fizzbuzz"
+
+Fizzbuzz::CLI.start(ARGV)

@@ -1,0 +1,28 @@
+AllCops:
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'scripts/**/*'
+    - 'spec/examples/**/*'
+  DisplayCopNames: true
+  TargetRubyVersion: 2.3
+Metrics/LineLength:
+  Max: 100
+  AllowURI: true
+  AllowHeredoc: true
+Documentation:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/BlockDelimiters:
+  AutoCorrect: false
+Style/ClassAndModuleChildren:
+    Enabled: false
+Style/PerlBackrefs:
+  AutoCorrect: false
+Style/StringLiterals:
+  Enabled: false
+Style/MutableConstant:
+  Enabled: false
+Style/TrailingCommaInLiteral:
+  Enabled: false
