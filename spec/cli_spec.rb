@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec.describe 'fizzbuzz command', type: :aruba do
   context 'version option' do
-    before(:each) { run('fizzbuzz v') }
+    before(:each) { run_command('fizzbuzz v') }
     it { expect(last_command_started).to be_successfully_executed }
     it { expect(last_command_started).to have_output("0.1.0") }
   end
@@ -20,20 +20,20 @@ RSpec.describe 'fizzbuzz command', type: :aruba do
       -d, [--debug], [--no-debug]      # debug mode
 EXPECTED
 
-    before(:each) { run('fizzbuzz help') }
+    before(:each) { run_command('fizzbuzz help') }
     it { expect(last_command_started).to be_successfully_executed }
     it { expect(last_command_started).to have_output(expected) }
   end
 
   context 'fizzbuzz subcommand' do
     expected = %w(FizzBuzz 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz).join(',')
-    before(:each) { run('fizzbuzz fizzbuzz 15') }
+    before(:each) { run_command('fizzbuzz fizzbuzz 15') }
     it { expect(last_command_started).to be_successfully_executed }
     it { expect(last_command_started).to have_output(expected) }
   end
 
   context 'fizzbuzz subcommand invalid args' do
-    before(:each) { run('fizzbuzz fizzbuzz a') }
+    before(:each) { run_command('fizzbuzz fizzbuzz a') }
     it { expect(last_command_started).not_to be_successfully_executed }
   end
 end
